@@ -1,16 +1,22 @@
 #include <MyWidget.h>
 
-void MyWidget::setGreenColor()
+MyWidget::MyWidget(QWidget* parent)
 {
-	currentColor = QPixmap("C:\\Users\\Leswa\\source\\repos\\RepeatWorkingWithWidgets\\Materials\\GreenCircle.png");
+	setParent(parent);
+	setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+	greenColor = QPixmap("C:\\Users\\Leswa\\source\\repos\\RepeatWorkingWithWidgets\\Materials\\GreenCircle.png");
+	yellowColor = QPixmap("C:\\Users\\Leswa\\source\\repos\\RepeatWorkingWithWidgets\\Materials\\YellowCircle.png");
+	redColor = QPixmap("C:\\Users\\Leswa\\source\\repos\\RepeatWorkingWithWidgets\\Materials\\RedCircle.png");
+	currentColor = greenColor;
+	setGeometry(currentColor.rect());
+	slider->setMinimum(0);
+	slider->setMaximum(100);
+	layout->addWidget(slider, 0, 2);
 }
 
-void MyWidget::setYellowColor()
+void MyWidget::paintEvent(QPaintEvent* e)
 {
-	currentColor = QPixmap("C:\\Users\\Leswa\\source\\repos\\RepeatWorkingWithWidgets\\Materials\\YellowCircle.png");
+	QPainter paintCirlce(this);
+	paintCirlce.drawPixmap(e->rect(), currentColor);
 }
 
-void MyWidget::setRedColor()
-{
-	currentColor = QPixmap("C:\\Users\\Leswa\\source\\repos\\RepeatWorkingWithWidgets\\Materials\\RedCircle.png");
-}
