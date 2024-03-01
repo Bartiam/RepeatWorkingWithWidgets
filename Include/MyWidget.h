@@ -18,11 +18,12 @@ public:
 	// Переопределённый метод от QWidget;
 	QSize minimumSizeHint() const override;
 
+	// Хедеры методов изменения цвета круга;
+	void setGreenColor();
+	void setYellowColor();
+	void setRedColor();
 
 private:
 	// Переменные для изменения цвета.
-	QPixmap currentColor;
-	QPixmap greenColor;
-	QPixmap yellowColor;
-	QPixmap redColor;
+	QPixmap currentColor;;
 };
