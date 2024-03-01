@@ -1,4 +1,4 @@
-#include <QApplication>
+п»ї#include <QApplication>
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QSlider>
@@ -9,18 +9,18 @@
 class Circle : public QWidget
 {
 public:
-	// Конструктор по умолчанию.
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ.
 	Circle() = default;
-	// Конструктор принимающий родительское окно.
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїСЂРёРЅРёРјР°СЋС‰РёР№ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРµ РѕРєРЅРѕ.
 	Circle(QWidget* parent);
-	// Переопределённый метод от QWidget.
+	// РџРµСЂРµРѕРїСЂРµРґРµР»С‘РЅРЅС‹Р№ РјРµС‚РѕРґ РѕС‚ QWidget.
 	void paintEvent(QPaintEvent* e) override;
-	// Переопределённый метод от QWidget;
+	// РџРµСЂРµРѕРїСЂРµРґРµР»С‘РЅРЅС‹Р№ РјРµС‚РѕРґ РѕС‚ QWidget;
 	QSize minimumSizeHint() const override;
 
 
 private:
-	// Переменные для изменения цвета.
+	// РџРµСЂРµРјРµРЅРЅС‹Рµ РґР»СЏ РёР·РјРµРЅРµРЅРёСЏ С†РІРµС‚Р°.
 	QPixmap currentColor;
 	QPixmap greenColor;
 	QPixmap yellowColor;

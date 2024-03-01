@@ -1,26 +1,26 @@
-#include <MyWidget.h>
+п»ї#include <MyWidget.h>
 
-// Реализация конструктора.
+// Р РµР°Р»РёР·Р°С†РёСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 Circle::Circle(QWidget* parent)
 {
-	// Установка родительского окна.
+	// РЈСЃС‚Р°РЅРѕРІРєР° СЂРѕРґРёС‚РµР»СЊСЃРєРѕРіРѕ РѕРєРЅР°.
 	setParent(parent);
-	// Нахождение всех нужных файлов для отрисовки разного цвета кругов.
+	// РќР°С…РѕР¶РґРµРЅРёРµ РІСЃРµС… РЅСѓР¶РЅС‹С… С„Р°Р№Р»РѕРІ РґР»СЏ РѕС‚СЂРёСЃРѕРІРєРё СЂР°Р·РЅРѕРіРѕ С†РІРµС‚Р° РєСЂСѓРіРѕРІ.
 	greenColor = QPixmap("C:\\Users\\Leswa\\source\\repos\\RepeatWorkingWithWidgets\\Materials\\GreenCircle.png");
 	yellowColor = QPixmap("C:\\Users\\Leswa\\source\\repos\\RepeatWorkingWithWidgets\\Materials\\YellowCircle.png");
 	redColor = QPixmap("C:\\Users\\Leswa\\source\\repos\\RepeatWorkingWithWidgets\\Materials\\RedCircle.png");
-	// Установка текущего цвета по умолчанию.
+	// РЈСЃС‚Р°РЅРѕРІРєР° С‚РµРєСѓС‰РµРіРѕ С†РІРµС‚Р° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ.
 	currentColor = redColor;
-	// Установка фиксированного размера виджета.
+	// РЈСЃС‚Р°РЅРѕРІРєР° С„РёРєСЃРёСЂРѕРІР°РЅРЅРѕРіРѕ СЂР°Р·РјРµСЂР° РІРёРґР¶РµС‚Р°.
 	setFixedSize(QSize(200, 250));
 }
-// Реализация метода отрисовки.
+// Р РµР°Р»РёР·Р°С†РёСЏ РјРµС‚РѕРґР° РѕС‚СЂРёСЃРѕРІРєРё.
 void Circle::paintEvent(QPaintEvent* e)
 {
 	QPainter paintCirlce(this);
 	paintCirlce.drawPixmap(e->rect(), currentColor);
 }
-// Реализация метода возвращающего минимальное значение.
+// Р РµР°Р»РёР·Р°С†РёСЏ РјРµС‚РѕРґР° РІРѕР·РІСЂР°С‰Р°СЋС‰РµРіРѕ РјРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ.
 QSize Circle::minimumSizeHint() const
 {
 	return QSize(100, 100);

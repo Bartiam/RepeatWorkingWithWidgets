@@ -1,4 +1,4 @@
-#include <MyWidget.h>
+﻿#include <MyWidget.h>
 
 int main(int argc, char** argv)
 {
