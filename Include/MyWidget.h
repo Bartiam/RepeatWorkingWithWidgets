@@ -1,24 +1,28 @@
 #include <QApplication>
-#include <QSlider>
 #include <QWidget>
+#include <QVBoxLayout>
+#include <QSlider>
 #include <QPixmap>
 #include <QPainter>
 #include <QPaintEvent>
-#include <QGridlayout>
 
-class MyWidget : public QWidget
+class Circle : public QWidget
 {
 public:
-	MyWidget() = default;
-	MyWidget(QWidget* parent);
-
+	// Конструктор по умолчанию.
+	Circle() = default;
+	// Конструктор принимающий родительское окно.
+	Circle(QWidget* parent);
+	// Переопределённый метод от QWidget.
 	void paintEvent(QPaintEvent* e) override;
+	// Переопределённый метод от QWidget;
+	QSize minimumSizeHint() const override;
+
 
 private:
+	// Переменные для изменения цвета.
 	QPixmap currentColor;
 	QPixmap greenColor;
 	QPixmap yellowColor;
 	QPixmap redColor;
-	QSlider* slider = new QSlider(Qt::Horizontal);
-	QGridLayout* layout = new QGridLayout(this);
 };
