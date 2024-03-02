@@ -5,7 +5,6 @@ Circle::Circle(QWidget* parent)
 {
 	// Установка родительского окна.
 	setParent(parent);
-	// Нахождение всех нужных файлов для отрисовки разного цвета кругов.
 	// Установка текущего цвета по умолчанию.
 	currentColor = QPixmap("C:\\Users\\Leswa\\source\\repos\\RepeatWorkingWithWidgets\\Materials\\GreenCircle.png");
 	// Установка фиксированного размера виджета.
@@ -25,19 +24,19 @@ QSize Circle::minimumSizeHint() const
 
 void Circle::setGreenColor() 
 {
-	currentColor = QPixmap("C:\\Users\\Leswa\\source\\repos\\RepeatWorkingWithWidgets\\Materials\\GreenCircle.png");
+	currentColor = QPixmap("..\\..\\Materials\\GreenCircle.png");
 	update();
 }
 
 void Circle::setYellowColor()
 {
-	currentColor = QPixmap("C:\\Users\\Leswa\\source\\repos\\RepeatWorkingWithWidgets\\Materials\\YellowCircle.png");
+	currentColor = QPixmap("..\\..\\Materials\\YellowCircle.png");
 	update();
 }
 
 void Circle::setRedColor() 
 {
-	currentColor = QPixmap("C:\\Users\\Leswa\\source\\repos\\RepeatWorkingWithWidgets\\Materials\\RedCircle.png");
+	currentColor = QPixmap("..\\..\\Materials\\RedCircle.png");
 	update();
 }
 

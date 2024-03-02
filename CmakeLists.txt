@@ -3,8 +3,11 @@ set(PROJECT_NAME RepeatWorkingWithWidgets)
 set(MY_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/Include)
 project(${PROJECT_NAME})
 
-set(CMAKE_PREFIX_PATH "F:\\Qt\\5.15.2\\msvc2019_64\\lib\\cmake")
-find_package(Qt5Widgets REQUIRED)
+find_package(Qt5 COMPONENTS
+		Core
+		Gui
+		Widgets
+		REQUIRED)
 
 add_subdirectory(src)
 target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
